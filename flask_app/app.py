@@ -4,6 +4,7 @@ import pandas as pd
 from flask_login import LoginManager, UserMixin, login_user, current_user, login_required
 from website.models import User
 from website.auth import auth
+import numpy as np 
 
 app = Flask(__name__)
 app.register_blueprint(auth)
@@ -57,6 +58,21 @@ def get_book_info(isbn_list):
     book_info = final_rating[final_rating['ISBN'].isin(isbn_list)][['title', 'img_url']].drop_duplicates().to_dict('records')
 
     return book_info
+
+
+def recommend_book(book_name):
+    book_id = np.where(book_pivot_item_based.index == book_name)[0][0]
+    distance, suggestion = model_item_based.kneighbors(book_pivot_item_based.iloc[book_id, :].values.reshape(1, -1), n_neighbors=6)
+
+    recommended_books = []  # Create an empty list to store recommendations
+
+    for i in range(len(suggestion)):
+        books = book_pivot_item_based.index[suggestion[i]]
+        for j in books:
+            # Append the book title and image URL to the recommended_books list
+            recommended_books.append({'title': j, 'img_url': get_img_url_for_title(j)})
+
+    return recommended_books
 app = Flask(__name__, template_folder='website/templates')
 
 @app.route('/')
@@ -82,6 +98,17 @@ def recommend():
 
     except Exception as e:
         return jsonify({'error': str(e)})
+    
+@app.route('/search', methods=['GET', 'POST'])
+@login_required
+def search():
+    if request.method == 'POST':
+        search_query = request.form.get('search_query')
+        recommended_books = recommend_book(search_query)  # Call your recommendation function here with the search query
+
+        return render_template('recommendationBooks.html', recommendations=recommended_books )
+
+    return render_template('search.html')
 
 
 if __name__ == '__main__':
