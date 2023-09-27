@@ -1,5 +1,43 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 
 {% block content%}
-<h1>home page</h1>
+<html>
+    <head>
+<script>
+    document.getElementById("recommend-button").addEventListener("click", function() {
+        var userIdInput = document.getElementById("user-id-input");
+        var user_id = userIdInput.value.trim();
+
+        if (user_id) {
+            // Send a GET request to trigger your Flask route
+            // You should replace '/recommend/' with the correct URL for your Flask route
+            // For example, if it's '/recommend/<int:user_id>', you can use '/recommend/' + user_id
+            fetch('/recommend/' + user_id)
+                .then(response => {
+                    if (response.status === 200) {
+                        // Redirect to the recommendation page
+                        window.location.href = '/recommendations.html'; // Replace with your actual page URL
+                    } else {
+                        console.error('Recommendation request failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        } else {
+            alert('Please enter a valid User ID.');
+        }
+    });
+</script>
+
+
+       </head>
+    <body>
+        <h1>home page</h1>
+        <input type="text" id="user-id-input" placeholder="Enter User ID">
+        <button id="recommend-button">Recommend books</button>
+    </body>
+
+</html>
+
 {% endblock %}
