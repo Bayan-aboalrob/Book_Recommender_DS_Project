@@ -1,0 +1,21 @@
+{
+    "header": {
+        "menu": [
+            {
+                "link": "/",
+                "title": "Home",
+                "isDropdown": false
+            },
+            {
+                "link": "/book",
+                "title": "Search",
+                "isDropdown": false
+            },
+            {
+                "link": "contact",
+                "title": "Contact",
+                "isDropdown": false
+            }
+        ]
+    }
+}
