@@ -98,3 +98,42 @@ body{
 .button__primary:hover::before{
     transform: translate3d(100%,0,0);
 }
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    opacity: .3;
+    border-width: 5px;
+    border-style: solid;
+    border-color:#fcb0b4 ;
+}
+.x1{
+    animation: movecircles 25s linear infinite;
+    top: 150px
+}
+.x2{
+    left: 200px;
+    top: 200px;
+    transform: scale(0.6);
+    animation: movecircles 35s linear infinite;;
+}
+.x3{
+    left: -250px;
+    bottom: 250px;
+    transform: scale(0.8);
+    animation: movecircles 40s linear infinite;
+}
+.x4{
+    left: 470px;
+    bottom: 300px;
+    transform: scale(.75);
+    animation: movecircles 45s linear infinite;
+}
+.x5{
+    left: -150px;
+    bottom: 100px;
+    transform: scale(.8);
+    animation: movecircles 50s linear infinite;
+}

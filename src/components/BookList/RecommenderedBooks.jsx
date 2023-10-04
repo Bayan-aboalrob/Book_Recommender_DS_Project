@@ -19,7 +19,7 @@ const RecommenderedBooks = () => {
         </div>
         <div className='booklist-content grid'>
           {
-            BookS?.map((item) => {
+            BookS.map((item) => {
               return (
                 <Book2 itemData={item} />
               )

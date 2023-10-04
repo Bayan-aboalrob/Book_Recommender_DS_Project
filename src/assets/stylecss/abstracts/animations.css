@@ -15,3 +15,19 @@
         transform:translateZ(0) ;
     }
 }
+@keyframes upDown{
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes movecircles{
+    0%{
+        margin-left: 1000px;
+    }
+    100%{
+        margin-left: -1000px;
+    }
+}

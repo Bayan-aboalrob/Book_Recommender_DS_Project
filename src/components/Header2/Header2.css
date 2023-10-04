@@ -1,57 +1,66 @@
-
 .header-content{
-    min-height: 90vh;
-    /* background: 
-  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../../../public/assets/images/zain.jpeg") center/cover no-repeat; */
-    flex-direction: column;
-    background-color: #f5ebe6;
+  min-height: 90vh;
+  /* background: 
+linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url("../../../public/assets/images/zain.jpeg") center/cover no-repeat; */
+  flex-direction: column;
+  background-color: #f5ebe6;
+  height: calc(100vh - 76px) !important;
 }
-
+.header-content > div {
+height: 100%;
+margin-top: 150px !important;
+}
+.header-content > div > p {
+margin-top: 50px !important;
+}
+.header-content > div > .search-form {
+margin-top: -50px;
+}
 .header-title{
-    font-size: 2.8rem;
-    max-width: 770px;
-    padding-top: 200px;
-    padding-left: 150px;
-    padding-right: 20px;
+  font-size: 2.8rem;
+  max-width: 770px;
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-right: 20px;
 }
 .header-text{
-    margin-top: 1.8rem;
-    margin-bottom: 2.8rem;
-    opacity: 0.8;
-    max-width: 770px;
+  margin-top: 1.8rem;
+  margin-bottom: 2.8rem;
+  opacity: 0.8;
+  max-width: 770px;
 }
 
 .header{
-    padding: .5px;
+  padding: .5px;
 
 }
 
 .find{
-    color: #c27b7f;
-    font-size: 50px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #c27b7f;
+  font-size: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .reco {
-    background-color: #c27b7f;  /* Set the background color to gold */
-    color: white;  /* Set the text color */
-    border: none;  /* Remove border */
-    padding: 10px 20px;  /* Adjust padding as needed */
-    font-size: 16px;  /* Adjust font size as needed */
-    border-radius: 8px;  /* Add rounded corners */
-    cursor: pointer;  /* Show a pointer cursor on hover */
-    transition: 0.3;
-  }
-  .ifYou{
-    color: #c27b7f;
-  }
-  /* Optional: Add hover effect */
-  .reco:hover {
-    background-color: #f5ebe6;  /* Darker gold color on hover */
-  }
-  .homeButton{
-    background-color: #c27b7f;
-  }
-  /* .choice{
-    color: #b1912e;
-  } */
+  background-color: #c27b7f;  /* Set the background color to gold */
+  color: white;  /* Set the text color */
+  border: none;  /* Remove border */
+  padding: 10px 20px;  /* Adjust padding as needed */
+  font-size: 16px;  /* Adjust font size as needed */
+  border-radius: 8px;  /* Add rounded corners */
+  cursor: pointer;  /* Show a pointer cursor on hover */
+  transition: 0.3;
+}
+.ifYou{
+  color: #c27b7f;
+}
+/* Optional: Add hover effect */
+.reco:hover {
+  background-color: #f5ebe6;  /* Darker gold color on hover */
+}
+.homeButton{
+  background-color: #c27b7f;
+}
+/* .choice{
+  color: #b1912e;
+} */
