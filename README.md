@@ -30,7 +30,7 @@ The interactions between users and books are pivotal for our recommendation engi
 
 - **Ratings Data:** (User ID, ISBN, Book Rating)
 
-##How LitWise Recommends Books
+## How LitWise Recommends Books
 
 LitWise utilizes collaborative filtering to identify user similarities and preferences. By comparing users' behaviors, we predict book ratings for each user. The system then offers personalized recommendations, presenting the top 10 books that best match the user's interests. This process is powered by the K-Nearest Neighbors (KNN) algorithm, which assesses user closeness to refine recommendations. LitWise aims to make your reading journey effortless and enjoyable by tailoring book choices to your unique preferences.
 
